@@ -1,0 +1,16 @@
+﻿%{
+open FslexFsyacc.Runtime
+open FslexFsyacc.Fslex
+open FslexFsyacc.Fslex.FslexTokenUtils
+type token = int*int*FslexToken
+%}
+
+last = [")" "*" "+" "?" HOLE ID LITERAL "]"]
+first = ["(" HOLE ID LITERAL "["]
+any = ["%%" "&" "(" ")" "*" "+" "/" "=" "?" CAP HEADER HOLE ID LITERAL SEMANTIC "[" "]" "|"]
+
+%%
+
+HEADER "%%"+     { [lexbuf.Head] }
+<last> / <first> { appendAMP lexbuf }
+<any>            { lexbuf }

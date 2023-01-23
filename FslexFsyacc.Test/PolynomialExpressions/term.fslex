@@ -1,0 +1,11 @@
+﻿%{
+open FslexFsyaccEx.Runtime
+open PolynomialExpressions.Tokenizer
+type token = int*int*Token
+%}
+index = "**" INT
+sign = [ "+" "-" ]
+%%
+<sign>? INT { // multiline test
+              toConst lexbuf }
+<sign>? INT? ID <index>? { toTerm lexbuf }

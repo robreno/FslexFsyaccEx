@@ -1,0 +1,101 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<GenerateProgramFile>false</GenerateProgramFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="Dir.fs" />
+		<Compile Include="Runtime\PositionTest.fs" />
+		<Compile Include="Runtime\RenderUtilsTest.fs" />    
+		<Compile Include="Lex\NFACombineTest.fs" />
+		<Compile Include="Lex\RegularExpressionNFATest.fs" />
+		<Compile Include="Lex\LookaheadTest.fs" />
+		<Compile Include="Lex\AnalyzerNFATest.fs" />
+		<Compile Include="Lex\NFAOperationsTest.fs" />
+		<Compile Include="Lex\DFATest.fs" />
+		<Compile Include="Lex\SubsetDFATest.fs" />
+		<Compile Include="Lex\PartitionTest.fs" />
+		<Compile Include="Lex\NFAtoDFATest.fs" />
+		<Compile Include="Lex\LexFileNormalizationTest.fs" />
+
+		<Compile Include="Yacc\Example427Test.fs" />
+		<Compile Include="Yacc\Example440Test.fs" />
+		<Compile Include="Yacc\Example448Test.fs" />
+		<Compile Include="Yacc\Example454Test.fs" />
+		<Compile Include="Yacc\ProductionUtilsTest.fs" />
+		<Compile Include="Yacc\LALRExpressionTest.fs" />
+		<Compile Include="Yacc\PrecedenceTest.fs" />
+		<Compile Include="Yacc\Section4_8_1Test.fs" />
+		<Compile Include="Yacc\Section4_8_2Test.fs" />
+		
+		<Compile Include="FSharpSourceTextTest.fs" />
+    
+		<Compile Include="Fslex\FslexParseTableTest.fs" />
+		<Compile Include="Fslex\FslexDFATest.fs" />
+		<Compile Include="Fslex\AnalyzeTest.fs" />
+
+		<Compile Include="Fsyacc\SemanticGeneratorTest.fs" />
+		<Compile Include="Fsyacc\Fsyacc2ParseTableTest.fs" />
+		<Compile Include="Fsyacc\RegularSymbolCompilerTest.fs" />
+		<Compile Include="Fsyacc\FsyaccFileRenderTest.fs" />
+		<Compile Include="Fsyacc\FsyaccFileShakingTest.fs" />
+		<Compile Include="Fsyacc\FsyaccFileNameTest.fs" />
+		<Compile Include="Fsyacc\FsyaccFileRulesTest.fs" />
+    
+		<None Include="FSharpGrammar\fsyacc\pars.fsyacc" />
+		<Compile Include="FSharpGrammar\ParsParseTableTest.fs" />
+		<Compile Include="FSharpGrammar\ManyYaccFilesParseTableTest.fs" />
+		<Compile Include="Expr\ExprToken.fs" />
+		<None Include="Expr\expr.fsyacc" />
+		<Compile Include="Expr\ExprParseTable.fs" />
+		<Compile Include="Expr\ExprParseTableTest.fs" />
+		<Compile Include="Expr\ExprCompilerTest.fs" />
+		
+		<Compile Include="PolynomialExpressions\Polynomials.fs" />
+		<Compile Include="PolynomialExpressions\Tokenizer.fs" />
+		<Compile Include="PolynomialExpressions\TokenizerTest.fs" />
+		<None Include="PolynomialExpressions\term.fslex" />
+		<Compile Include="PolynomialExpressions\TermDFA.fs" />
+		<Compile Include="PolynomialExpressions\TermDFATest.fs" />
+		<Compile Include="PolynomialExpressions\Parser.fs" />
+		<Compile Include="PolynomialExpressions\ParserTest.fs" />
+		<Compile Include="PolynomialExpressions\AnalyzerTest.fs" />
+		<Compile Include="UBViews\QueryTypes.fs" />
+		<None Include="UBViews\Parser.fsy" />
+		<None Include="UBViews\Lexer.fsl" />
+		<Compile Include="UBViews\File1.fs" />
+		<Compile Include="BalancedBracketCounterTest.fs" />
+
+		<Compile Include="Program.fs" />
+    
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FSharp.xUnit" Version="1.2.4" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+		<PackageReference Include="System.Reactive" Version="5.0.0" />
+		<PackageReference Include="xunit" Version="2.4.2" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="coverlet.collector" Version="3.2.0">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\FSharp.Compiler.SyntaxTreeX\FSharp.Compiler.SyntaxTreeX.fsproj" />
+	  <ProjectReference Include="..\FslexFsyacc.Runtime\FslexFsyaccEx.Runtime.fsproj" />
+	  <ProjectReference Include="..\FslexFsyacc\FslexFsyaccEx.fsproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="FSharp.Core" Version="7.0.0" />
+	</ItemGroup>
+
+</Project>

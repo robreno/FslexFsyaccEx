@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<Description>Tools for Fslex/Fsyacc analyzer/parser generation.</Description>
+		<PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+		<Copyright>xp44mm</Copyright>
+		<PackageProjectUrl>https://github.com/xp44mm/FslexFsyacc</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/xp44mm/FslexFsyacc</RepositoryUrl>
+		<PackageTags>lex;yacc;compiler;parser;analyzer</PackageTags>
+		<PackageReleaseNotes>TheoryParser</PackageReleaseNotes>
+		<Company>34696643@qq.com</Company>
+		<Authors>xp44m</Authors>
+		<Version>1.3.2</Version>
+		<IsPublishable>True</IsPublishable>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="Lex\RegularExpression.fs" />
+		<Compile Include="Lex\Transition.fs" />
+		<Compile Include="Lex\RegularNFA.fs" />
+		<Compile Include="Lex\NFACombine.fs" />
+		<Compile Include="Lex\RegularExpressionNFA.fs" />
+		<Compile Include="Lex\PatternNFA.fs" />
+		<Compile Include="Lex\AnalyzerNFA.fs" />
+		<Compile Include="Lex\NFAOperations.fs" />
+		<Compile Include="Lex\SubsetDFA.fs" />
+		<Compile Include="Lex\Partition.fs" />
+		<Compile Include="Lex\PartitionDFA.fs" />
+		<Compile Include="Lex\DFATools.fs" />
+		<Compile Include="Lex\DFA.fs" />
+
+		<Compile Include="Yacc\NullableFactory.fs" />
+		<Compile Include="Yacc\FirstFactory.fs" />
+		<Compile Include="Yacc\LastFactory.fs" />
+		<Compile Include="Yacc\FollowFactory.fs" />
+		<Compile Include="Yacc\PrecedeFactory.fs" />
+		<Compile Include="Yacc\GrammarMemoiz.fs" />
+		<Compile Include="Yacc\Grammar.fs" />
+		<Compile Include="Yacc\ItemCore.fs" />
+		<Compile Include="Yacc\ItemCoreFactory.fs" />
+		<Compile Include="Yacc\ItemCoreAttributeFactory.fs" />
+		<Compile Include="Yacc\ClosureFactory.fs" />
+		<Compile Include="Yacc\ClosureOperators.fs" />
+		<Compile Include="Yacc\CollectionFactory.fs" />
+		<Compile Include="Yacc\LALRCollection.fs" />
+		<Compile Include="Yacc\ProductionUtils.fs" />
+		<Compile Include="Yacc\AmbiguityEliminator.fs" />
+		<Compile Include="Yacc\Action.fs" />
+		<Compile Include="Yacc\AmbiguousCollectionUtils.fs" />
+		<Compile Include="Yacc\AmbiguousCollection.fs" />
+		<Compile Include="Yacc\ParsingTable.fs" />
+		<Compile Include="Yacc\ParseTableEncoder.fs" />
+		<Compile Include="Yacc\ParseTable.fs" />
+		<Compile Include="Yacc\BNF.fs" />
+		
+		<Compile Include="FSharpSourceText.fs" />
+		
+		<Compile Include="Fslex\LexSemanticGenerator.fs" />
+		<Compile Include="Fslex\LexFileNormalization.fs" />
+		<Compile Include="Fslex\FslexToken.fs" />
+		<Compile Include="Fslex\FslexTokenUtils.fs" />
+		<None Include="Fslex\fslex.fslex" />
+		<Compile Include="Fslex\FslexDFA.fs" />
+		<None Include="Fslex\fslex.fsyacc" />
+		<Compile Include="Fslex\FslexParseTable.fs" />
+		<Compile Include="Fslex\FslexCompiler.fs" />
+		<Compile Include="Fslex\FslexDFAFile.fs" />
+		<Compile Include="Fslex\FslexFile.fs" />
+
+		<Compile Include="Fsyacc\SemanticGenerator.fs" />
+		<Compile Include="Fsyacc\FsyaccToken.fs" />
+		<Compile Include="Fsyacc\FsyaccTokenUtils.fs" />
+		<Compile Include="Fsyacc\RegularSymbol.fs" />
+		<Compile Include="Fsyacc\RegularSymbolToken.fs" />
+		<None Include="Fsyacc\fsyacc2.fsyacc" />
+		<Compile Include="Fsyacc\Fsyacc2ParseTable.fs" />
+		<Compile Include="Fsyacc\FsyaccCompiler.fs" />
+		<Compile Include="Fsyacc\FsyaccParseTableFile.fs" />
+		<Compile Include="Fsyacc\FsyaccFileRender.fs" />
+		<Compile Include="Fsyacc\FsyaccFileRules.fs" />
+		<Compile Include="Fsyacc\FsyaccFileShaking.fs" />
+		<Compile Include="Fsyacc\FsyaccRules.fs" />
+		<Compile Include="Fsyacc\RawFsyaccFile.fs" />
+		<Compile Include="Fsyacc\FsyaccFilePrecedences.fs" />
+		<Compile Include="Fsyacc\FlatFsyaccFile.fs" />
+		<Compile Include="Fsyacc\FlatFsyaccFileRule.fs" />
+		
+		<None Include="..\readme.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
+
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FSharp.Idioms" Version="1.2.16" />
+		<PackageReference Include="FSharp.Literals" Version="2.2.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\FslexFsyacc.Runtime\FslexFsyaccEx.Runtime.fsproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="FSharp.Core" Version="7.0.0" />
+	</ItemGroup>
+
+</Project>
